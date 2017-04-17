@@ -1,3 +1,10 @@
+/*
+	ä¹¦ä¸Šçš„æ–¹æ³•ï¼šä»å³ä¸Šè§’å¼€å§‹å‘å·¦ä¸‹æœã€‚
+	æˆ‘çš„æ–¹æ³•ï¼šç»´æŠ¤ä¸€ä¸ªçŸ©é˜µï¼šbegx,begy, finx, finy. ç”¨äºŒåˆ†æŸ¥æ‰¾ä¸æ–­finx, finyï¼Œ
+	begx, begyæ¯æ¬¡+1.
+	å¦‚æœbex>finx || finx > finy é‚£ä¹ˆæ²¡æ‰¾åˆ°.
+	æ—¶é—´å¤æ‚åº¦logNlogM(n+m)
+*/
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
@@ -8,7 +15,7 @@ using namespace std;
 
 class Solution {
 public:
-    // Ë®Æ½·½Ïò¶ş·Ö²éÕÒ,µÚbegxĞĞ
+    // æ°´å¹³æ–¹å‘äºŒåˆ†æŸ¥æ‰¾,ç¬¬begxè¡Œ
     int horiFind(int target, vector<vector<int> > array) {
         int l = begy, r = finy;
         
@@ -22,9 +29,9 @@ public:
                 r = mid-1;
             }
         }
-        return l<finy ? l : finy;	// l Ö¸ÏòendµÄÇé¿ö(¼´target±ÈÏòÁ¿ÖĞµÄËùÓĞÔªËØ¶¼´ó)
+        return l<finy ? l : finy;	// l æŒ‡å‘endçš„æƒ…å†µ(å³targetæ¯”å‘é‡ä¸­çš„æ‰€æœ‰å…ƒç´ éƒ½å¤§)
     }
-    // ÊúÖ±·½Ïò¶ş·Ö²éÕÒ,µÚbegyÁĞ
+    // ç«–ç›´æ–¹å‘äºŒåˆ†æŸ¥æ‰¾,ç¬¬begyåˆ—
     int vertFind(int target, vector<vector<int> > array) {
         int l = begx, r = finx;
         
